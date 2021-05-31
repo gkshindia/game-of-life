@@ -37,6 +37,7 @@ impl fmt::Display for Universe {
     }
 }
 
+#[wasm_bindgen]
 impl Universe {
     fn get_index(&self, row: u32, column: u32) -> usize {
         return (row * self.width + column) as usize;
@@ -57,7 +58,6 @@ impl Universe {
         }
         return count;
     }
-
 
     pub fn tick (&mut self) {
         let mut next = self.cells.clone();
